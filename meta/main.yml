@@ -50,6 +50,7 @@ galaxy_info:
     - docker
     - lapis
     - lua
+    - systemd
 
 dependencies:
   - abaez.docker
