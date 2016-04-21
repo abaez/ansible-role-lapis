@@ -27,17 +27,22 @@ user.name: String // user who will run the systemd service of the container.
 Requirements
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+The roles required are listed below:
+
+* [abaez.domain][6]
+* [abaez.docker][7]
 
 Usage
 -----
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Besides the role variables listed above, the only other piece required to run the role is to have required role added to the playbook.
 
 ``` yaml
 - hosts: servers
     roles:
-        - { role: username.rolename, x: 42 }
+        - abaez.domain
+        - abaez.docker
+        - lapis
 ```
 
 Author Information
@@ -52,3 +57,5 @@ Author Information
 [3p]: https://twitter.com/a_baez
 [4]: http://leafo.net/lapis
 [5]: https://www.lua.org
+[6]: https://galaxy.ansible.com/abaez/domain
+[7]: https://galaxy.ansible.com/abaez/docker
