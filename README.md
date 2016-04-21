@@ -3,12 +3,12 @@ Role Name
 [![license][2i]][2p]
 [![twitter][3i]][3p]
 
-A brief description of the role goes here.
+A role to run lapis as a docker service.
 
 Description
 -----------
 
-Give a description
+[Lapis][4] is a microframework built using [lua][5]. Very easy to use and quite fun to work with. This role allows you to have a working lapis environment through the combination of docker and systemd.
 
 Role Variables
 --------------
@@ -41,3 +41,5 @@ Author Information
 [2p]: ./LICENSE
 [3i]: https://img.shields.io/badge/twitter-a_baez-blue.svg
 [3p]: https://twitter.com/a_baez
+[4]: http://leafo.net/lapis
+[5]: https://www.lua.org
