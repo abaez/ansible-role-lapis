@@ -13,7 +13,16 @@ Description
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The role contains a couple of variables that are required to be changed to run properly:
+
+``` rust
+dir.app: String // directory of the lapis application.
+
+vhost.name: String // a domain url for the lapis app.
+vhost.port: u8 // a port number for the domain to bind to.
+
+user.name: String // user who will run the systemd service of the container.
+```
 
 Requirements
 ------------
