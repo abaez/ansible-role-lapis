@@ -1,0 +1,19 @@
+---
+- name: pull container
+  docker:
+    image: abaez/lapis
+    state: present
+    pull: always
+
+- name: move unit file to place
+  template:
+    src="lapis.j2"
+    dest="/usr/lib/systemd/system/lapis.service"
+    owner="{{ user.name }}"
+
+- name: enable docker container
+  service:
+    name=lapis
+    enabled=yes
+    state=reloaded
+

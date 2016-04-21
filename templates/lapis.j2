@@ -1,0 +1,21 @@
+[Unit]
+Description=lapis server container
+Requires=domains.service
+After=domains.service
+
+[Service]
+User={{ user.name }}
+Restart=on-failure
+RestartSec=10
+ExecStartPre=-/usr/bin/docker kill lapis
+ExecStartPre=-/usr/bin/docker rm lapis
+ExecStart=/usr/bin/docker run \
+  -v {{ dir.app }}:/app \
+  -e VIRTUAL_HOST={{ vhost.name }} -e VIRTUAL_PORT={{ vhost.port }} \
+  -p 80 \
+  --name=lapis abaez/lapis \
+  server production
+ExecStop=-/usr/bin/docker stop -t 2 lapis
+
+[Install]
+WantedBy=multi-user.target
