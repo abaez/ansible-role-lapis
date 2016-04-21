@@ -1,2 +1,6 @@
 ---
-# tasks file for template
+- name: lapis app depedencies setup
+  include: "dependencies.yml"
+
+- name: configure systemd
+  include: "systemd.yml"

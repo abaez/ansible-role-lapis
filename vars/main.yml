@@ -1,2 +1,7 @@
 ---
-# vars file for template
+dir:
+  app: # directory of the lapis application
+
+vhost:
+  name: "domain" # domain name of the lapis app
+  port: 80 # port for the domain to bind to
